@@ -1,8 +1,8 @@
 // https://randomuser.me/api/
 
-const fetch_data = document.getElementById("details")
+let DetailsContainer = document.getElementById("details")
 
- async function apidata(){
+async function RandonmUserData() {
     const result = await fetch("https://randomuser.me/api/")
     const data = await result.json()
 
@@ -14,35 +14,15 @@ const fetch_data = document.getElementById("details")
     const image = document.createElement("img")
     image.classList.add("image")
     image.src = getdata.picture.medium
-    
-    let toggel = false
-    function imgsize(){
-        
-        if(toggel){
-            image.src = getdata.picture.medium
-            image.style.width = "100px"; 
-            image.style.height = "100px";
-        }else{
-            image.src = getdata.picture.large
-            image.style.width = "367px"; 
-            image.style.height = "200px";
+    image.onclick = ()=> ImageEnlarg(image, alldata, getdata)
 
-            fetch_data.style.width = "400px"
-            fetch_data.style.height = "60vh"
 
-            
-            alldata.style.height = "55vh"
-            alldata.style.width = "370px"
-
-        }
-    }
-    image.onclick = imgsize
 
     const Gender = document.createElement("div")
     Gender.textContent = getdata.gender + " "
 
     const name = document.createElement("div")
-    name.textContent = getdata.name.title +" "+ getdata.name.first +" "+ getdata.name.last
+    name.textContent = getdata.name.title + " " + getdata.name.first + " " + getdata.name.last
 
     const street = document.createElement("div")
     street.textContent = getdata.location.street.name
@@ -76,8 +56,31 @@ const fetch_data = document.getElementById("details")
     alldata.appendChild(timezone)
     alldata.appendChild(user_email)
 
-    fetch_data.appendChild(alldata)
+    DetailsContainer.appendChild(alldata)
+}
 
- }
+let toggel = false
+function ImageEnlarg(image, alldata, getdata) {
+    
+    if (toggel) {
+        image.src = getdata.picture.medium
+        image.style.width = "100px";
+        image.style.height = "100px";
+    } else {
+        image.src = getdata.picture.large
+        image.style.width = "367px";
+        image.style.height = "200px";
+        
+        DetailsContainer.style.width = "400px"
+        DetailsContainer.style.height = "60vh"
+        
+        
+        alldata.style.height = "56.5vh"
+        alldata.style.width = "370px"
+        
+    }
+    
+    toggel =! toggel
+}
 
- apidata()
+RandonmUserData()
