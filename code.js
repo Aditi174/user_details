@@ -2,7 +2,7 @@
 
 let DetailsContainer = document.getElementById("details")
 
-let toggel = true
+let toggel = false
 function ImageEnlarg(image, getdata) {
     
     if (toggel) {
