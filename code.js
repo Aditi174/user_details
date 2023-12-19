@@ -2,6 +2,23 @@
 
 let DetailsContainer = document.getElementById("details")
 
+let toggel = true
+function ImageEnlarg(image, getdata) {
+    
+    if (toggel) {
+        image.src = getdata.picture.medium
+        image.style.width = "200px"; 
+        image.style.height = "200px";
+    } else {
+        image.src = getdata.picture.large
+        image.style.width = "400px"; 
+        image.style.height = "400px"
+        
+    }
+    
+    toggel = !toggel
+}
+
 async function RandonmUserData() {
     const result = await fetch("https://randomuser.me/api/")
     const data = await result.json()
@@ -14,7 +31,7 @@ async function RandonmUserData() {
     const image = document.createElement("img")
     image.classList.add("image")
     image.src = getdata.picture.medium
-    image.onclick = ()=> ImageEnlarg(image, alldata, getdata)
+    image.onclick = ()=> ImageEnlarg(image, getdata)
 
 
 
@@ -59,28 +76,5 @@ async function RandonmUserData() {
     DetailsContainer.appendChild(alldata)
 }
 
-let toggel = false
-function ImageEnlarg(image, alldata, getdata) {
-    
-    if (toggel) {
-        image.src = getdata.picture.medium
-        image.style.width = "100px";
-        image.style.height = "100px";
-    } else {
-        image.src = getdata.picture.large
-        image.style.width = "367px";
-        image.style.height = "200px";
-        
-        DetailsContainer.style.width = "400px"
-        DetailsContainer.style.height = "60vh"
-        
-        
-        alldata.style.height = "56.5vh"
-        alldata.style.width = "370px"
-        
-    }
-    
-    toggel =! toggel
-}
 
 RandonmUserData()
