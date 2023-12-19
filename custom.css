@@ -49,10 +49,17 @@ title{
 @media(max-width:473.06px) {
     .details{
         width: 270px;
+        overflow: auto;
     }
 
     .container{
         width:200px;
     }
+
+    .image {
+        width: 100px;
+        height: auto;
+    }
+
     
 }
