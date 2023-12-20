@@ -52,7 +52,12 @@ title {
 
 
 
-@media(max-width: 300px) {
+@media only screen and (max-width: 700px) {
+
+    body {
+        justify-content: center;
+    }
+
     .details {
         width: 180px;
         overflow: auto;
