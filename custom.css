@@ -54,12 +54,12 @@ title {
 
 @media(max-width: 300px) {
     .details {
-        width: 210px;
+        width: 180px;
         overflow: auto;
     }
 
     .container {
-        width:150px;
+        width:120px;
         height:auto;
         font-size: small;
     }
