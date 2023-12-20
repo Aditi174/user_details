@@ -59,12 +59,12 @@ title {
     }
 
     .details {
-        width: 180px;
+        width: 200px;
         overflow: auto;
     }
 
     .container {
-        width:120px;
+        width:150px;
         height:auto;
         font-size: 10px;
     }
