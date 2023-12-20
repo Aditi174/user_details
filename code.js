@@ -7,12 +7,11 @@ function ImageEnlarg(image, getdata) {
     
     if (toggel) {
         image.src = getdata.picture.medium
-        image.style.width = "200px"; 
-        image.style.height = "200px";
+        image.classList.remove("large")
+        
     } else {
         image.src = getdata.picture.large
-        image.style.width = "400px"; 
-        image.style.height = "400px"
+        image.classList.add("large")
         
     }
     

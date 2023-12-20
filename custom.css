@@ -3,18 +3,18 @@
     padding: 0;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-script{
+script {
     display: none;
 }
 
-title{
+title {
     display: none;
 }
 
@@ -43,23 +43,36 @@ title{
     height: 200px
 }
 
+.large {
+
+    border: solid black;
+    width: 400px;
+    height: 400px
+}
 
 
 
-@media(max-width:473.06px) {
-    .details{
-        width: 270px;
+@media(max-width: 300px) {
+    .details {
+        width: 210px;
         overflow: auto;
     }
 
-    .container{
-        width:280px;
+    .container {
+        width:150px;
+        height:auto;
+        font-size: small;
     }
 
     .image {
-        width: 100px;
+        width: 30px;
         height: auto;
+        border: solid black;
     }
 
-    
+    .large {
+        width: 100%;
+        height: auto;
+        border: solid black;
+    }
 }
